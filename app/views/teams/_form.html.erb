@@ -1,10 +1,10 @@
-<%= form_for [@user, Team.new] do |f| %>
+<%= form_for @team, :url => url_for(:controller => 'teams', :action => 'create') do |f| %>
 
 <%= f.label "Team Name" %> <br>
 <%= f.text_field :name %>
 <br></br>
 <%= f.label "Pick a League" %> <br>
-<%= f.text_field :league_id %>
+<%= f.collection_select :league_id, League.all, :id, :name %>
 <br></br>
 <%= f.submit %>
 <% end %>
