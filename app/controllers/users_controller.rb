@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update, :destroy]
   def index
-    @users = Users.all
+    @users = User.all
   end
 
   def show
   end
 
   def new
-
+    @user = User.new
   end
 
   def create
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render :new
-    end 
+    end
   end
 
   def update

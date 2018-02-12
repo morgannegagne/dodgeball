@@ -1,0 +1,10 @@
+<%= form_for [@user, Team.new] do |f| %>
+
+<%= f.label "Team Name" %> <br>
+<%= f.text_field :name %>
+<br></br>
+<%= f.label "Pick a League" %> <br>
+<%= f.text_field :league_id %>
+<br></br>
+<%= f.submit %>
+<% end %>

@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20180212144258) do
     t.string "name"
     t.integer "user_id"
     t.integer "league_id"
-    t.integer "wins"
-    t.integer "losses"
+    t.integer "wins", default: 0
+    t.integer "losses", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

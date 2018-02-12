@@ -4,8 +4,8 @@ class CreateTeams < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :user_id
       t.integer :league_id
-      t.integer :wins
-      t.integer :losses
+      t.integer :wins, :default => 0
+      t.integer :losses, :default => 0
 
       t.timestamps
     end
