@@ -1,2 +1,11 @@
 <h1>Current Team</h1>
-<%= @team.name %>
+<p><%= @team.name %></p>
+<p>Owner: <%= @team.user.name %></p>
+<p>League: <%= @team.league.name %></p>
+
+<p>Players</p>
+<ul>
+  <% @team.players.each do |player| %>
+  <li> <%= player.name %> </li>
+  <% end %>
+</ul>

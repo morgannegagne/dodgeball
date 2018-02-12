@@ -4,6 +4,8 @@ class Team < ApplicationRecord
   has_many :player_teams
   has_many :players, through: :player_teams
   belongs_to :league
+  belongs_to :user
+  
   def matches
     Match.where('home_team_id = ? or visitor_team_id = ?', id, id)
   end

@@ -4,21 +4,20 @@ class TeamsController < ApplicationController
   before_action :set_team, only:[:show, :edit, :update, :destroy]
 
 
-
-
   def show
+    byebug
   end
 
   def new
-    @team = Team.new(user_id: params[:user_id])
+    @team = Team.new
   end
 
   def create
-    byebug
     @team = Team.new(team_params)
+    @team.user = @user
     if @team.valid?
       @team.save
-      redirect_to team_path(@team)
+      redirect_to user_team_path
     else
       render :new
     end
@@ -35,7 +34,7 @@ class TeamsController < ApplicationController
 
   private
   def set_team
-    @team = Team.find_by(id: params[:id])
+    @team = Team.find_by(user_id: params[:user_id]) || Team.find_by(id: params[:id])
   end
 
   def set_user
@@ -43,7 +42,7 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-    params.require(:team).permit(:name)
+    params.require(:team).permit(:name, :league_id)
   end
-# user_id, :league_id, :wins, :losses
+
 end
