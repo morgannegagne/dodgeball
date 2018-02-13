@@ -10,6 +10,10 @@ class Notification < ApplicationRecord
     end
   end
 
+  def display_date
+    self.created_at.strftime('%A, %B %-d, %Y')
+  end
+
   def self.unread
     self.where(unread: true)
   end

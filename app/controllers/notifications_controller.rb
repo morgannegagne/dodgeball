@@ -1,7 +1,8 @@
 class NotificationsController < ApplicationController
 
   def index
-    @notifications = Notification.where(user_id: current_user.id)
+    @notifications = Notification.unread.where(user_id: current_user.id)
+
   end
 
   def update
