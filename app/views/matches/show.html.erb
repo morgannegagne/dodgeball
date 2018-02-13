@@ -1,0 +1,9 @@
+<h1>Match Results</h1>
+
+<h2>Competing: <%= @match.home_team.name%> VS <%= @match.away_team.name %></h2>
+
+<h3>Winner: <%= @match.winning_team.name %></h3>
+
+<h3>New Records</h3>
+<%= "Home team: #{@match.home_team.name} - Wins: #{@match.home_team.wins}  Losses: #{@match.home_team.losses}" %> <br>
+<%= "Away team: #{@match.away_team.name} - Wins: #{@match.away_team.wins}  Losses: #{@match.away_team.losses}" %>

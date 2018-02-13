@@ -10,6 +10,6 @@
 <ul>
 <% @users.each do |user| %>
 <li><%= user.name  %>
-  <%= button_to "Challenge #{user.name}!", action: 'create', method: 'post', params: { user2: user.id } %></li>
+  <%= button_to "Challenge #{user.name}!", action: 'create', method: 'post', params: { away_team_id: user.team.id } %></li>
 <% end %>
 </ul>

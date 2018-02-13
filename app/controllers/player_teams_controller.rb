@@ -6,7 +6,6 @@ class PlayerTeamsController < ApplicationController
   end
 
   def create
-    byebug
     PlayerTeam.create(team_id: @team.id, player_id: player_params[:player1_id])
     PlayerTeam.create(team_id: @team.id, player_id: player_params[:player2_id])
     PlayerTeam.create(team_id: @team.id, player_id: player_params[:player3_id])
