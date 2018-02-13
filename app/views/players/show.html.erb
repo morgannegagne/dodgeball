@@ -1,0 +1,9 @@
+<h1><%= @player.name %> #<%= @player.number %></h1>
+
+<%= image_tag @player.image_url %>
+
+<h3><p>Position: <%= @player.position.capitalize %></p></h3>
+<p>Height: <%= @player.height %></p>
+<p>Wingspan: <%= @player.wingspan %> in</p>
+
+<%= link_to "See All Players", players_path %>

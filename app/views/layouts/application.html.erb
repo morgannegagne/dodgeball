@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DodgeballMod2FinalProject</title>
+    <title>Let's Play Dodgeball!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <%= link_to "Sign Up" %>
+    <%= link_to "Log In"%>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Your Team" %>
+    <%= link_to "Play Dodgeball!", new_match_path %>
+    <%= link_to "League Standings" %>
     <%= yield %>
   </body>
 </html>
