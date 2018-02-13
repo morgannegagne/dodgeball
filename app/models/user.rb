@@ -4,4 +4,9 @@ class User < ApplicationRecord
   has_many :players, through: :player_teams
   has_secure_password
 
+
+  def self.search_users(search_term)
+    self.all.select{|user| user.name.downcase.include?(search_term.downcase)}
+  end
+  
 end
