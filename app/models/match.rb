@@ -5,8 +5,6 @@ class Match < ApplicationRecord
 
   def assign_winner
     teams = [home_team_id, away_team_id]
-
-
     self.winning_team_id = teams.sample
     self.save
   end
@@ -31,6 +29,10 @@ class Match < ApplicationRecord
 
   def winning_team
     Team.find_by(id: self.winning_team_id)
+  end
+
+  def create_notification
+    Notification.create(match_id: self.id, user_id: self.away_team.user_id)
   end
 
 

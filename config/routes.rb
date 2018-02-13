@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'application#home'
 
@@ -7,7 +6,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :teams, only: [:index, :show]
+  resources :teams, only: [:show]
+  resources :players
+  resources :matches, only: [:index, :show, :new, :create]
+  resources :leagues, only: [:index, :show]
+  resources :notifications, only: [:index, :update]
 
   get '/teams/:id/add_players', to: 'player_teams#new', as: 'add_team_players'
   post '/teams/:id', to: 'player_teams#create'
@@ -17,11 +20,5 @@ Rails.application.routes.draw do
   resources :users do
     resource :team
   end
-
-  resources :players
-  resources :matches, only: [:index, :show, :new, :create]
-  resources :leagues, only: [:index, :show]
-
-  resources :notifications, only: [:index]
 
 end

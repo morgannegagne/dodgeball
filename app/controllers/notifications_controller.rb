@@ -1,12 +1,12 @@
 class NotificationsController < ApplicationController
 
   def index
-    byebug
     @notifications = Notification.where(user_id: current_user.id)
   end
 
-  def show
+  def update
+    @notification = Notification.find_by(id: params[:id])
+    @notification.update(unread: false)
   end
-
 
 end

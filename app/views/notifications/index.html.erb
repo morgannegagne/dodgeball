@@ -4,6 +4,7 @@
   <p>You don't have any notifications</p>
 <% else %>
   <% @notifications.each do |notification| %>
-  <p><%= notification.create_message %></p>
+  <%= notification.create_message %>
+  <%= button_to "Mark as Read", notification_path(notification), :notification_id => notification.id, :method=>"patch"  %>
   <% end %>
 <% end %>

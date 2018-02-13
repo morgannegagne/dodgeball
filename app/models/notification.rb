@@ -9,4 +9,8 @@ class Notification < ApplicationRecord
       "You lost to #{self.match.home_team.name} :("
     end
   end
+
+  def self.unread
+    self.where(unread: true)
+  end
 end

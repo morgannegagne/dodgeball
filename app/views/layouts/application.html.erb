@@ -22,7 +22,7 @@
     <%= link_to "Play Dodgeball!", new_match_path %>
     <%= link_to "League Standings", leagues_path %>
     <%= link_to "Sign Out", logout_path, method: :delete %>
-    <%= link_to "Notifications", notifications_path %>
+    <%= link_to "Notifications (#{Notification.unread.where(user_id: current_user.id).count})", notifications_path %>
     <% end %>
     <%= yield %>
   </body>

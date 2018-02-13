@@ -7,6 +7,10 @@ class Team < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
 
+  def user_id
+    self.user.id
+  end
+
   def matches
     Match.where('home_team_id = ? or away_team_id = ?', id, id)
   end
