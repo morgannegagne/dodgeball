@@ -4,6 +4,8 @@ class Match < ApplicationRecord
 
   def assign_winner
     teams = [home_team_id, away_team_id]
+    
+
     self.winning_team_id = teams.sample
     self.save
   end

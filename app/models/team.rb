@@ -5,6 +5,7 @@ class Team < ApplicationRecord
   has_many :players, through: :player_teams
   belongs_to :league
   belongs_to :user
+  validates :name, presence: true
 
   def matches
     Match.where('home_team_id = ? or away_team_id = ?', id, id)
@@ -19,4 +20,5 @@ class Team < ApplicationRecord
     self.losses += 1
     self.save
   end
+
 end

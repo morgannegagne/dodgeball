@@ -1,3 +1,9 @@
+<% if @user.errors %>
+  <% @user.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+  <% end %>
+<% end %>
+
 <%= form_for @user do |f| %>
   <%= f.label "Username: " %>
   <%= f.text_field :name %> <br>

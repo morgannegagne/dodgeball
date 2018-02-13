@@ -15,11 +15,14 @@ class PlayerTeamsController < ApplicationController
   end
 
   def edit
-
+    @player = Player.find_by(id: params[:player_id])
+    PlayerTeam.where(player_id: params[:player_id], team_id: params[:id]).destroy_all
   end
 
   def update
-
+    byebug
+    PlayerTeam.create(team_id: @team.id, player_id: player_params[:id])
+    redirect_to @team
   end
 
   def destroy
@@ -34,7 +37,11 @@ class PlayerTeamsController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:player1_id, :player2_id, :player3_id, :player4_id, :player5_id)
+    if params[:player][:id]
+      params.require(:player).permit(:id)
+    else
+      params.require(:player).permit(:player1_id, :player2_id, :player3_id, :player4_id, :player5_id)
+    end
   end
 
 end

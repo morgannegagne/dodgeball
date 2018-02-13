@@ -20,6 +20,6 @@ Rails.application.routes.draw do
 
   resources :players
   resources :matches, only: [:index, :show, :new, :create]
-  resources :league, only: [:index, :show]
+  resources :leagues, only: [:index, :show]
 
 end

@@ -23,6 +23,14 @@ class TeamsController < ApplicationController
   end
 
   def update
+    user = User.find_by(id: params[:user_id])
+    @team = user.team
+    if @team.update(team_params)
+      @team.save
+      redirect_to user_team_path(@team.user, @team)
+    else
+      render :edit
+    end
   end
 
   def edit

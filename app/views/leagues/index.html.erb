@@ -1,0 +1,8 @@
+<h1>Overall Standings</h1>
+
+<%@leagues.each do |league| %>
+  <h3><%= league.name %></h3>
+  <% league.teams.order(wins: :desc).each do |team| %>
+  <p>Team : <%= link_to team.name, team %> Wins : <%= team.wins %> Losses : <%= team.losses%></p>
+  <% end %>
+  <% end %>

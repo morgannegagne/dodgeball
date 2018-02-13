@@ -1,5 +1,7 @@
-<h1>Your Team's Players</h1>
+<h1>Replace Player</h1>
 
-<%= @team.players.each do |player| %>
-  <%= player.name %>
+<%= form_tag({controller: 'player_teams', action: 'update'}, method: "patch") do %>
+<%= label_tag("Replace your player") %>
+<%= collection_select(:player, :id, Player.where(position: @player.position), :id, :name)%> <br>
+<%= submit_tag "submit" %>
 <% end %>

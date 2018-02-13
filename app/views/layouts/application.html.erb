@@ -20,7 +20,7 @@
     <% end %>
     <% if logged_in? %>
     <%= link_to "Play Dodgeball!", new_match_path %>
-    <%= link_to "League Standings", league_index_path %>
+    <%= link_to "League Standings", leagues_path %>
     <%= link_to "Sign Out", logout_path, method: :delete %>
     <% end %>
     <%= yield %>
