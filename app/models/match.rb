@@ -1,10 +1,11 @@
 class Match < ApplicationRecord
   belongs_to :home_team, class_name: 'Team'
   belongs_to :away_team, class_name: 'Team'
+  has_many :notifications
 
   def assign_winner
     teams = [home_team_id, away_team_id]
-    
+
 
     self.winning_team_id = teams.sample
     self.save

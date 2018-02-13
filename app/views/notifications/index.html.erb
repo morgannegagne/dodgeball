@@ -1,0 +1,9 @@
+<h1>Your Notifications</h1>
+
+<% if @notifications.empty? %>
+  <p>You don't have any notifications</p>
+<% else %>
+  <% @notifications.each do |notification| %>
+  <p><%= notification.create_message %></p>
+  <% end %>
+<% end %>
