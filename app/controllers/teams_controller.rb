@@ -5,7 +5,6 @@ class TeamsController < ApplicationController
 
 
   def show
-    byebug
   end
 
   def new
@@ -17,7 +16,7 @@ class TeamsController < ApplicationController
     @team.user = @user
     if @team.valid?
       @team.save
-      redirect_to user_team_path
+      redirect_to add_team_players_path(@team)
     else
       render :new
     end

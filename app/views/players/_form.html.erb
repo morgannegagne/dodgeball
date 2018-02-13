@@ -1,1 +1,25 @@
-
+<h1>Add a Player to the Best Dodgeball League Ever</h1>
+<%= form_for @player do |f| %>
+  <%= f.label "Player Name: " %>
+  <%= f.text_field :name %> <br>
+  <%= f.label "Number: " %>
+  <%= f.text_field :number %> <br>
+  <%= f.label "Height: " %>
+  <%= f.text_field :height %> <br>
+  <%= f.label "Wingspan: " %>
+  <%= f.text_field :wingspan %> <br>
+  <%= f.label "Position: " %>
+  <%= f.label "Corner" %>
+  <%= f.radio_button :position, "corner" %>
+  <%= f.label "Second" %>
+  <%= f.radio_button :position, "second" %>
+  <%= f.label "Middle" %>
+  <%= f.radio_button :position, "middle" %>
+  <%= f.label "Runner" %>
+  <%= f.radio_button :position, "runner" %>
+  <%= f.label "Shagger" %>
+  <%= f.radio_button :position, "shagger" %> <br>
+  <%= f.label "Image URL: " %>
+  <%= f.text_field :image_url %> <br>
+  <%= f.submit %>
+<% end %>

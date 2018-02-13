@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s Team</h1>
+<h1><%= current_user.name %>'s Team</h1>
 <p><%= @team.name %></p>
 <p>League: <%= @team.league.name %></p>
 
@@ -8,5 +8,3 @@
   <li> <%= player.name %> </li>
   <% end %>
 </ul>
-
-<%= link_to "Edit Team", edit_user_team @user %>

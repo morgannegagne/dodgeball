@@ -13,8 +13,19 @@ class PlayerTeamsController < ApplicationController
     PlayerTeam.create(team_id: @team.id, player_id: player_params[:player4_id])
     PlayerTeam.create(team_id: @team.id, player_id: player_params[:player5_id])
     redirect_to @team
+  end
 
-    end
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
+  end
 
 
   private

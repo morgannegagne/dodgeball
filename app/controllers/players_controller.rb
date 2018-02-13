@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only:[:show, :edit, :update, :destroy]
-  
+
   def index
     @players = Player.all
   end
@@ -14,8 +14,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-    if @player.valid?
-      @player.save
+    if @player.save
       redirect_to @player
     else
       render :new
@@ -37,7 +36,7 @@ class PlayersController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:name)
+    params.require(:player).permit(:name, :height, :wingspan, :number, :image_url, :position)
   end
 
 
