@@ -2,13 +2,40 @@
 <html>
   <head>
     <title>DodgeballMod2FinalProject</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= analytics_init if Rails.env.production? %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></link>
   </head>
-
   <body>
-    <%= yield %>
+    <!--  navbar -->
+
+        <a class="navbar-brand" href="<%= users_path %>"/>Home</a>
+        <% if current_user %>
+          <a class="navbar-brand" href="<%= user_path(current_user) %>"/>Welcome, <%= current_user.name %></a>
+          <%= link_to 'Logout', '/logout', {class: 'navbar-brand', method: 'DELETE'} %>
+
+          <% else %>
+          <a class="navbar-brand" href="<%= login_path %>"/>Login</a>
+          <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
+        <% end %>
+
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+           <!--  nav here -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container"  role="main">
+
+      <%= yield %>
+
+    </div>
+
   </body>
 </html>

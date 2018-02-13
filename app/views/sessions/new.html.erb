@@ -1,0 +1,13 @@
+<%= form_tag '/login', {class: 'ui form'} do %>
+
+<% if flash[:message] %>
+  <p><%= flash[:message] %></p>
+<% end %>
+  <!-- <%= text_field_tag :name %> -->
+  <div class="field">
+    <label for="username">Username</label>
+    <%= text_field_tag :'user[username]' %>
+  </div>
+
+  <%= submit_tag 'Login' %>
+<% end %>
