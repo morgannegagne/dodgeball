@@ -26,6 +26,7 @@ Player.create(name: "Steph Curry", number: 30, height: "6'3 in", wingspan: 72, p
 Player.create(name: "Michael Jordan", number: 23, height: "6'7 in", wingspan: 72, position: "second", image_url: "https://c1.staticflickr.com/9/8119/8645746456_9a1f13acca_z.jpg")
 Player.create(name: "White Goodman", number: 19, height: "5' 5 in", wingspan: 64, position: "second", image_url: "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-dodgeball-a-true-underdog-story-ben-stiller.jpg")
 Player.create(name: "Kenny Kawaguchi", number: 14, height: "3' 8 in", wingspan: 40, position: "second", image_url: "https://vignette.wikia.nocookie.net/humongous/images/c/c2/BYS_Kenny.png/revision/latest?cb=20110601165036")
+Player.create(name: "Nicolas Cage", number: 44, height: "5' 11 in", wingspan: 70, position: "second", image_url: "https://img.buzzfeed.com/buzzfeed-static/static/2014-01/campaign_images/webdr06/7/14/50-reasons-why-nicolas-cage-is-the-greatest-human-1-5571-1389124720-1_big.jpg")
 
 # Corners
 Player.create(name: "Tom Brady", number: 12, height: "6'4 in", wingspan: 74, position: "corner", image_url: "https://2.bp.blogspot.com/-d10E9K7ZR1s/UtsBMFbULeI/AAAAAAAACCs/j-mJ1MI08WQ/s640/tom-brady-combine.jpg")
@@ -33,6 +34,8 @@ Player.create(name: "CC Sabathia", number: 52, height: "6'6 in", wingspan: 74, p
 Player.create(name: "Helga Pataki", number: 9, height: "4' 2 in", wingspan: 50, position: "corner", image_url: "https://vignette.wikia.nocookie.net/nickelodeon/images/3/3f/59e9047ad075f61c85524314.png/revision/latest?cb=20171107231515")
 Player.create(name: "Cam Newton", number: 1, height: "6' 5 in", wingspan: 77, position: "corner", image_url: "https://media.golfdigest.com/photos/5a008660c979d54140edbecf/master/w_768,c_limit/GettyImages-870626736.jpg")
 Player.create(name: "Russell Westbrook", number: 0, height: "6' 3 in", wingspan: 84, position: "corner", image_url: "https://www.thewrap.com/wp-content/uploads/2017/06/Russell-Westbrook.jpg")
+Player.create(name: "Gary Busey", number: 67, height: "6' 0 in", wingspan: 70, position: "corner", image_url: "http://static.tvtropes.org/pmwiki/pub/images/gary_busey.jpg")
+
 # Shaggers
 Player.create(name: "Mr. Krabs", number: 4, height: "2'1 in", wingspan: 24, position: "shagger", image_url: "https://upload.wikimedia.org/wikipedia/en/6/63/MrKrabs.png")
 Player.create(name: "Kanye", number: 0, height: "5' 8 in", wingspan: 60, position: "shagger", image_url: "http://i.dailymail.co.uk/i/pix/2017/08/19/09/435F42FA00000578-0-image-a-3_1503131841717.jpg")

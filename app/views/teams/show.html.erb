@@ -1,18 +1,32 @@
 <h1><%= @team.user.name %>'s Team</h1>
-<p><%= @team.name %></p>
-<%= link_to "Edit Your Team Name", edit_user_team_path(@team.user, @team) %>
 
-<p>League: <%= @team.league.name %></p>
+<p>Team Name : <%= @team.name %></p>
+<p>League : <%= @team.league.name %></p>
 
+
+<% if @team.user.id.to_i == current_user.id.to_i %>
 
 <p>Players</p>
-<ul>
-  <% @team.players.each do |player| %>
+<% @team.players.each do |player| %>
   <li> <%= link_to player.name, player %>
-    <%= form_tag(edit_team_players_path(@team),  :method => "get") do %>
+    <%= form_tag({controller: 'player_teams', action: 'edit'},  :method => "get") do %>
         <%= hidden_field_tag :player_id, player.id %>
         <%= submit_tag "Trade"%>
     <% end %>
 </li>
   <% end %>
 </ul>
+<%= link_to "Edit Your Team", edit_user_team_path(@team.user, @team) %>
+</ul>
+
+<%else %>
+<ul>
+ <% @team.players.each do |player| %>
+ <li> <%= link_to player.name, player %>
+
+</li>
+ <% end %>
+
+</ul>
+
+<% end  %>
