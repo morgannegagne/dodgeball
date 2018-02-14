@@ -17,4 +17,8 @@ class User < ApplicationRecord
     self.ranking.level
   end
 
+  def league_id
+    self.team.league.id
+  end
+
 end

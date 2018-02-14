@@ -1,15 +1,35 @@
-<h1>Play a Match!</h1>
 
-<h3>Choose your opponent: </h3>
+<div class="fluid-container text-center">
+  <h1>Play a Match!</h1>
+  <h3>Choose your opponent: </h3>
+</div>
 
-<%= form_tag(new_match_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search for an opponent" %>
-    <%= submit_tag "Search"%>
-<% end %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-2">
+    <div class="input-group">
+      <%= form_tag(new_match_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for an opponent", class:"form-control" %>
+      <span class="input-group-btn">
+        <button class="btn btn-info btn-lg" type="button">
+            <i class="glyphicon glyphicon-search"></i>
+        </button>
+      </span>
+    <% end %>
+  </div>
+  </div>
+</div>
 
-<ul>
+<br></br>
+
 <% @users.each do |user| %>
-<li><%= user.name  %>
-  <%= button_to "Challenge #{user.name}!", action: 'create', method: 'post', params: { away_team_id: user.team.id } %></li>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3 text-right">
+    <%= user.name %>
+  </div>
+  <div class="col-sm-3">
+    <%= button_to "Challenge #{user.name}!", action: 'create', method: 'post', params: { away_team_id: user.team.id } %>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
 <% end %>
-</ul>
