@@ -9,25 +9,33 @@
   </head>
 
   <body>
-    <div class="jumbotron">
-      <h1 class="text-danger">Bootstrap test <small> Secondary Text </small></h1>
-      <h1>testing</h1>
+    <div class="fluid-container">
+      <h1 class="text-danger">Dodgeball!</h1>
     </div>
-    <% if !logged_in? %>
 
-    <%= link_to "Sign Up", new_user_path %>
-    <%= link_to "Log In", login_path%>
-    <% end %>
-    <%= link_to "Home", root_path %>
-    <% if current_user %>
-      <%= "Hi, #{current_user.name}" %>
-    <% end %>
-    <% if logged_in? %>
-    <%= link_to "Play Dodgeball!", new_match_path %>
-    <%= link_to "League Standings", leagues_path %>
-    <%= link_to "Sign Out", logout_path, method: :delete %>
-    <%= link_to "Notifications (#{Notification.unread.where(user_id: current_user.id).count})", notifications_path %>
-    <% end %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <% if current_user %>
+            <p class="navbar-brand"><%= "Hi, #{current_user.name}" %></p>
+
+
+          <% end %>
+        </div>
+        <ul class="nav navbar-nav">
+          <% if !logged_in? %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Log In", login_path%></li>
+          <% else %>
+            <li><%= link_to "Team", user_team_path(current_user, current_user.team) %></li>
+            <li><%= link_to "Play Dodgeball!", new_match_path %> </li>
+            <li><%= link_to "League Standings", leagues_path %> </li>
+            <li><%= link_to "Sign Out", logout_path, method: :delete %> </li>
+            <li><%= link_to "Notifications (#{Notification.unread.where(user_id: current_user.id).count})", notifications_path %> </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

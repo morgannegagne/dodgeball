@@ -1,3 +1,5 @@
+<%= render partial: 'teams/team_tabs', locals: {team: current_user.team, user: current_user} %>
+
 <h1>Your Notifications</h1>
 
 <% if @notifications.empty? %>

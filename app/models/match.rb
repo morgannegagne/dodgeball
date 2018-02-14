@@ -33,16 +33,16 @@ class Match < ApplicationRecord
     wins = self.winning_team.wins
     case wins
     when 5
-      winning_team.update(ranking_id: 2)
+      winning_team.user.update(ranking_id: 2)
       "Congratulations, you are now an Underdog!"
     when 10
-      winning_team.update(ranking_id: 3)
+      winning_team.user.update(ranking_id: 3)
       "Congratulations, you are now an Average Joe!"
     when 50
-      winning_team.update(ranking_id: 4)
+      winning_team.user.update(ranking_id: 4)
       "Congratulations, you are now a Wrench Dodger!"
     when 100
-      winning_team.update(ranking_id: 5)
+      winning_team.user.update(ranking_id: 5)
       "Congratulations, you are now a DODGEBALL LEGEND!!!"
     end
   end

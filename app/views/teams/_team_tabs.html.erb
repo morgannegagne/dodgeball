@@ -1,0 +1,29 @@
+<% if logged_in? %>
+
+  <div class="row well">
+    <div class="col-sm-8">
+      <h1><%= team.name %></h1>
+      <h4>Manager : <%= user.name %></h4>
+      <h4> <%= "Level #{user.ranking.level} - #{user.ranking.name}" %> </h4>
+      <p>League : <%= team.league.name %></p>
+    </div>
+    <div class="col-sm-4">
+      <div class="text-center">
+        <h3>Record</h3>
+        <h4><%= "#{team.wins} - #{team.losses}" %></h4>
+        <p><%= "Winning Percentage: ??" %></p>
+      </div>
+    </div>
+
+  </div>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="">Team</a></li>
+    <li><a href="#"> Matches</a></li>
+    <li><%= link_to "Standings", leagues_path %></li>
+    <% if team.user.id.to_i == current_user.id.to_i %>
+      <li> <%= link_to "Notifications (#{Notification.unread.where(user_id: current_user.id).count})", notifications_path %></li>
+    <% end %>
+  </ul>
+
+<% end %>
