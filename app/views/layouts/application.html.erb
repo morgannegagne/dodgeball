@@ -3,12 +3,16 @@
   <head>
     <title>Let's Play Dodgeball!</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="jumbotron">
+      <h1 class="text-danger">Bootstrap test <small> Secondary Text </small></h1>
+      <h1>testing</h1>
+    </div>
     <% if !logged_in? %>
 
     <%= link_to "Sign Up", new_user_path %>
