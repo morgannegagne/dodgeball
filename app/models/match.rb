@@ -71,5 +71,17 @@ class Match < ApplicationRecord
     end
   end
 
+  def summary
+    if self.home_team_id == self.winning_team_id
+      "#{self.home_team.name} def. #{self.away_team.name}"
+    else
+      "#{self.away_team.name} def. #{self.home_team.name}"
+    end
+  end
+
+  def display_date
+    self.created_at.strftime('%A, %B %-d, %Y')
+  end
+
 
 end
