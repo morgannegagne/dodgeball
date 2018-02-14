@@ -4,6 +4,12 @@ class MatchesController < ApplicationController
 
   WIN_MESSAGES = ["If you can dodge a wrench, you can dodge a ball. Nice Work.", "Nobody makes you bleed your own blood!", "It’s a bold strategy, Cotton. But it paid off for them!", "If you can dodge traffic, you can dodge a ball!", "Patches is proud!", "Effin' A, Cotton, Effin' A!", "'L' for love! Good times!"]
 
+  def index
+    byebug
+    @team = Team.find_by(id: params[:team_id])
+    @matches = @team.matches
+  end
+
   def show
     @match = Match.find_by(id: params[:id])
   end

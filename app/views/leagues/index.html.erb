@@ -1,10 +1,8 @@
-<%= render partial: 'teams/team_tabs', locals: {team: current_user.team, user: current_user} %>
-
-<h1>League Standings</h1>
+<div class="container text-center">
+  <h1>All League Standings</h1>
+</div>
 
 <%@leagues.each do |league| %>
   <h3><%= league.name %></h3>
-  <% league.teams.order(wins: :desc).each do |team| %>
-    <p>Team : <%= link_to team.name, team %> Wins : <%= team.wins %> Losses : <%= team.losses%></p>
-  <% end %>
+  <%= render partial: "league_ranking_table", locals: {league: league} %>
 <% end %>

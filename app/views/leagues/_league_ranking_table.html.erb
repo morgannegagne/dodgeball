@@ -1,5 +1,3 @@
-<%= render partial: 'teams/team_tabs', locals: {team: current_user.team, user: current_user} %>
-
 <table class="table table-hover text-center">
   <thead>
     <tr>
@@ -11,10 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @league.teams.order(wins: :desc).each_with_index do |team, index| %>
+    <% league.teams.order(wins: :desc).each_with_index do |team, index| %>
     <tr>
         <td><%= index + 1 %></td>
-        <td> <%= team.name %> </td>
+        <td> <%= link_to team.name, team_path(team) %> </td>
         <td> <%= team.user.name %> </td>
         <td> <%= team.wins %> </td>
         <td> <%= team.losses %> </td>
