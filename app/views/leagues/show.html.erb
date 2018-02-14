@@ -4,7 +4,8 @@
 
 
 
-  <table class="table table-hover text-center">
+
+  <table class="table table-striped">
       <thead>
         <tr>
           <th>Rank</th>
@@ -17,11 +18,11 @@
       <tbody>
         <% @league.teams.order(wins: :desc).each_with_index do |team, index| %>
         <tr>
-            <td><%= index + 1 %></td>
-            <td> <%= team.name %> </td>
-            <td> <%= team.user.name %> </td>
-            <td> <%= team.wins %> </td>
-            <td> <%= team.losses %> </td>
+            <td class="text-left"><%= index + 1 %></td>
+            <td class="text-left"> <%= team.name %> </td>
+            <td class="text-left"> <%= team.user.name %> </td>
+            <td class="text-left"> <%= team.wins %> </td>
+            <td class="text-left"> <%= team.losses %> </td>
         </tr>
       <% end %>
 

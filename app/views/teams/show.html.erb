@@ -1,6 +1,6 @@
 <%= render partial: 'team_tabs', locals: {team: @team, user: @team.user} %>
 
-<p>Players</p>
+<h4>Roster</h4>
 <table class="table table-hover text-center">
     <thead>
       <tr>
@@ -17,11 +17,12 @@
     <tbody>
       <tr>
         <% @team.players.each do |player| %>
-        <td><%= player.number %></td>
-        <td><%= link_to player.name, player %></td>
-        <td><%= player.position %></td>
-        <td><%= player.height %></td>
-        <td><%= player.wingspan %></td>
+
+        <td class="text-left"><%= player.number %></td>
+        <td class="text-left"><%= link_to player.name, player %></td>
+        <td class="text-left"><%= player.position %></td>
+        <td class="text-left"><%= player.height %></td>
+        <td class="text-left"><%= player.wingspan %></td>
         <% if @team.user.id.to_i == current_user.id.to_i %>
         <td>
           <%= form_tag(edit_team_players_path(@team),  :method => "get") do %>
