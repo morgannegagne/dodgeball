@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :teams, only: [:show]
+  resources :teams, only: [:show] do
+    get '/matches', to: 'matches#index', as: 'matches'
+  end
+
   resources :players
   resources :matches, only: [:index, :show, :new, :create]
   resources :leagues, only: [:index, :show]

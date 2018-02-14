@@ -26,7 +26,6 @@ class PlayerTeamsController < ApplicationController
   end
 
   def destroy
-
   end
 
 

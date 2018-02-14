@@ -8,8 +8,6 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find_by(id: current_user.league_id)
-     
-
   end
 
 end

@@ -21,15 +21,6 @@ class PlayersController < ApplicationController
     end
   end
 
-  def update
-  end
-
-  def edit
-  end
-
-  def destroy
-  end
-
   private
   def set_player
     @player = Player.find_by(id: params[:id])

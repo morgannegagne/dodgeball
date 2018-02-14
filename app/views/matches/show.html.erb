@@ -1,11 +1,20 @@
-<h1><%= @match.home_team.name%> VS <%= @match.away_team.name %></h1>
 
-<h3>Winner: <%= @match.winning_team.name %></h3>
-
-<% if flash[:message] %>
-<h2> <%= flash[:message] %></h2>
-<% end %>
-
-<h3>New Records</h3>
-<%= "#{@match.home_team.name} : #{@match.home_team.wins} - #{@match.home_team.losses}" %> <br>
-<%= "#{@match.away_team.name} : #{@match.away_team.wins} - #{@match.away_team.losses}" %>
+<div class="container text-center">
+  <% if current_user.team == @match.winning_team %>
+    <div class="text-success">
+        <h1>YOU WON!</h1>
+        <h2> <%= flash[:message] %></h2>
+    </div>
+  <% else %>
+    <div class="text-danger">
+      <h1>You Lost!</h1>
+      <h2> <%= flash[:message] %></h2>
+    </div>
+  <% end %>
+  <h1><%= @match.home_team.name%> vs. <%= @match.away_team.name %></h1>
+  <h3>Winner: <%= @match.winning_team.name %></h3>
+  <br></br>
+  <h3><u>Match Summary</u></h3>
+  <%= "#{@match.home_team.name} advance to #{@match.home_team.wins} - #{@match.home_team.losses}, now ##{@match.home_team.league.find_team_rank(@match.home_team)} in the #{@match.home_team.league.name} league." %> <br>
+  <%= "#{@match.away_team.name} drop back to #{@match.away_team.wins} - #{@match.away_team.losses}, now ##{@match.away_team.league.find_team_rank(@match.away_team)} in the #{@match.away_team.league.name} league." %>
+</div>
