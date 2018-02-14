@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213203629) do
+ActiveRecord::Schema.define(version: 20180213230003) do
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 20180213203629) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rankings", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
@@ -68,7 +75,7 @@ ActiveRecord::Schema.define(version: 20180213203629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.integer "level", default: 1
+    t.integer "ranking_id", default: 1
   end
 
 end

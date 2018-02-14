@@ -1,5 +1,9 @@
 class MatchesController < ApplicationController
 
+  LOSS_MESSAGES = ["If you can’t dodge a wrench, you can’t dodge a ball. Start dodging wrenches.", "Ouchtown, population: You, bro!", "You're about as useful as a poopy flavored lollipop.", "You better learn the five d's of dodgeball: dodge duck dip dive and dodge", "Did you blindfold yourself?", "Damn you, Bernice!"]
+
+  WIN_MESSAGES = ["If you can dodge a wrench, you can dodge a ball. Nice Work.", "Nobody makes you bleed your own blood!", "It’s a bold strategy, Cotton. But it paid off for them!", "If you can dodge traffic, you can dodge a ball!", "Patches is proud!", "Effin' A, Cotton, Effin' A!", "'L' for love! Good times!"]
+
   def show
     @match = Match.find_by(id: params[:id])
   end
@@ -17,6 +21,7 @@ class MatchesController < ApplicationController
     @match.assign_winner
     @match.update_standings
     @match.create_notification
+    flash[:meassage] = @match.pick_match_message
     redirect_to @match
   end
 

@@ -5,6 +5,7 @@
 <% else %>
   <% @notifications.each do |notification| %>
   <h4><%= notification.display_date %></h4>
-  <%= notification.create_message %> <%= button_to "Mark as Read", notification_path(notification), :notification_id => notification.id, :method=>"patch"  %>
+  <%= notification.create_message %>
+  <%= button_to "Mark as Read", notification_path(notification), :notification_id => notification.id, :method=>"patch"  %>
   <% end %>
 <% end %>
