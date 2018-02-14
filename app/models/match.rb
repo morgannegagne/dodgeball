@@ -8,7 +8,6 @@ class Match < ApplicationRecord
   WIN_MESSAGES = ["If you can dodge a wrench, you can dodge a ball. Nice Work.", "Nobody makes you bleed your own blood!", "It’s a bold strategy, Cotton. But it paid off for them!", "If you can dodge traffic, you can dodge a ball!", "Patches is proud!", "Effin' A, Cotton, Effin' A!", "'L' for love! Good times!"]
 
   def assign_winner
-    byebug
     team_levels = [home_team.user.level, away_team.user.level]
     total_weight = team_levels.sum
     random_number = rand(1..total_weight)
@@ -32,22 +31,20 @@ class Match < ApplicationRecord
 
   def winning_team_rank_up
     wins = self.winning_team.wins
-    byebug
     case wins
     when 5
-      winning_team.ranking = Ranking.find_by(level: 2)
+      winning_team.update(ranking_id: 2)
       "Congratulations, you are now an Underdog!"
     when 10
-      winning_team.ranking = Ranking.find_by(level: 3)
+      winning_team.update(ranking_id: 3)
       "Congratulations, you are now an Average Joe!"
     when 50
-      winning_team.ranking = Ranking.find_by(level: 4)
+      winning_team.update(ranking_id: 4)
       "Congratulations, you are now a Wrench Dodger!"
     when 100
-      winning_team.ranking = Ranking.find_by(level: 5)
+      winning_team.update(ranking_id: 5)
       "Congratulations, you are now a DODGEBALL LEGEND!!!"
     end
-
   end
 
   def home_team

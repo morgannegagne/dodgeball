@@ -25,7 +25,7 @@ Player.create(name: "Patches O'Houlihan", number: 100, height: "5'7 in", wingspa
 Player.create(name: "Steph Curry", number: 30, height: "6'3 in", wingspan: 72, position: "second", image_url: "http://media.breitbart.com/media/2017/11/stephen-curry-ap-photo-640x480.png")
 Player.create(name: "Michael Jordan", number: 23, height: "6'7 in", wingspan: 72, position: "second", image_url: "https://c1.staticflickr.com/9/8119/8645746456_9a1f13acca_z.jpg")
 Player.create(name: "White Goodman", number: 19, height: "5' 5 in", wingspan: 64, position: "second", image_url: "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/p-dodgeball-a-true-underdog-story-ben-stiller.jpg")
-Player.create(name: "Kenny Kawaguchi", number: 14, height: "3' 8 in", wingspan: 40, position: "second" image_url: "https://vignette.wikia.nocookie.net/humongous/images/c/c2/BYS_Kenny.png/revision/latest?cb=20110601165036")
+Player.create(name: "Kenny Kawaguchi", number: 14, height: "3' 8 in", wingspan: 40, position: "second", image_url: "https://vignette.wikia.nocookie.net/humongous/images/c/c2/BYS_Kenny.png/revision/latest?cb=20110601165036")
 
 # Corners
 Player.create(name: "Tom Brady", number: 12, height: "6'4 in", wingspan: 74, position: "corner", image_url: "https://2.bp.blogspot.com/-d10E9K7ZR1s/UtsBMFbULeI/AAAAAAAACCs/j-mJ1MI08WQ/s640/tom-brady-combine.jpg")

@@ -21,7 +21,8 @@ class MatchesController < ApplicationController
     @match.assign_winner
     @match.update_standings
     @match.create_notification
-    flash[:meassage] = @match.pick_match_message
+    @match.winning_team_rank_up
+    flash[:message] = @match.pick_match_message
     redirect_to @match
   end
 

@@ -7,6 +7,7 @@ class NotificationsController < ApplicationController
   def update
     @notification = Notification.find_by(id: params[:id])
     @notification.update(unread: false)
+    redirect_to notifications_path
   end
 
 end
