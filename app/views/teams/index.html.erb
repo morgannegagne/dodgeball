@@ -1,20 +1,22 @@
-<div class="dodgeball red text-center">
-  <h1>Teams</h1>
+<div class="fluid-container wood-bg" style="padding-top: 20px;">
+  <div class="dodgeball red text-center">
+    <h1>Teams</h1>
+  </div>
+
+  <%= form_tag(teams_path, :method => "get", id: "search-form") do %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], placeholder: "Find a team...", class: "form-control"%>
+        <span class="input-group-btn">
+          <%= button_tag class: "btn btn-default" do %>
+            <span class='glyphicon glyphicon-search'></span>
+      <% end %>
+        </span>
+    </div>
+  <% end %>
+
+    <div class="text-center" style="padding-bottom: 20px;">
+      <% @teams.each do |team| %>
+      <p><%= link_to team.name, team_path(team), class: "red", style:"font-size: 18px" %></p>
+      <% end %>
+    </div>
 </div>
-
-<%= form_tag(teams_path, :method => "get", id: "search-form") do %>
-  <div class="input-group">
-    <%= text_field_tag :search, params[:search], placeholder: "Find a team...", class: "form-control"%>
-      <span class="input-group-btn">
-        <%= button_tag class: "btn btn-default" do %>
-          <span class='glyphicon glyphicon-search'></span>
-    <% end %>
-      </span>
-  </div>
-<% end %>
-
-  <div class="text-center">
-    <% @teams.each do |team| %>
-    <p><%= link_to team.name, team_path(team) %></p>
-    <% end %>
-  </div>

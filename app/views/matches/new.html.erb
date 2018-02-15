@@ -1,42 +1,43 @@
-
-<div class="fluid-container text-center">
-  <h1>Play a Match!</h1>
-  <h3>Choose your opponent: </h3>
-</div>
-
-<div class="search-from">
-<%= form_tag(new_match_path, :method => "get", id: "search-form") do %>
-  <div class="input-group">
-    <%= text_field_tag :search, params[:search], placeholder: "Search for an opponent", class: "form-control"%>
-      <span class="input-group-btn">
-        <%= button_tag class: "btn btn-default" do %>
-          <span class='glyphicon glyphicon-search'></span>
-        </div>
-    <% end %>
-      </span>
+<div class="fluid-container wood-bg">
+  <div class="container text-center">
+    <h1>Play a Match!</h1>
+    <h3>Choose your opponent: </h3>
   </div>
-<% end %>
 
-<br></br>
-
-
-<table class="table table-hover text-center">
-
-    <thead>
-      <tr>
-      <th class="text-center">Team</th>
-      <th class="text-center">Owner</th>
-      <th class="text-center">Challenge</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <%@users.each do |user| %>
-        <td class="text-center"><%= user.team.name %></td>
-        <td class="text-center"><%= user.name %></td>
-        <td class="text-center"><%= button_to "Challenge #{user.name}!", action: 'create', method: 'post', params: { away_team_id: user.team.id } %></td>
+  <div class="search-from">
+  <%= form_tag(new_match_path, :method => "get", id: "search-form") do %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], placeholder: "Search for an opponent", class: "form-control"%>
+        <span class="input-group-btn">
+          <%= button_tag class: "btn btn-default" do %>
+            <span class='glyphicon glyphicon-search'></span>
+          </div>
+      <% end %>
+        </span>
     </div>
-    </tr>
+  <% end %>
 
-<% end %>
-</table>
+  <br></br>
+
+  <div class="container">
+    <table class="table table-hover text-center">
+        <thead>
+          <tr>
+          <th class="text-center">Team</th>
+          <th class="text-center">Owner</th>
+          <th class="text-center">Challenge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <%@users.each do |user| %>
+            <td class="text-center"><%= user.team.name %></td>
+            <td class="text-center"><%= user.name %></td>
+            <td class="text-center"><%= button_to "Challenge #{user.name}!", action: 'create', method: 'post', params: { away_team_id: user.team.id }, class: "btn btn-primary"%></td>
+        </div>
+        </tr>
+
+    <% end %>
+    </table>
+  </div>
+</div>

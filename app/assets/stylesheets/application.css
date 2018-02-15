@@ -38,6 +38,10 @@ a.red:hover {
   background-color: rgb(255, 255, 255);
 }
 
+.wood-bg{
+  background-image: url('wood-floor');
+}
+
 .search-form{
   padding-left: 50rem;
   padding-right: 40rem;

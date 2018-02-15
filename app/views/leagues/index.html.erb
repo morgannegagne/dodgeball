@@ -3,7 +3,7 @@
 </div>
 
 <%@leagues.each do |league| %>
-  <h3><%= league.name %></h3>
+  <h3 style="padding-left: 10px;"><%= league.name %></h3>
   <%= render partial: "league_ranking_table", locals: {league: league} %>
 <% end %>
 
