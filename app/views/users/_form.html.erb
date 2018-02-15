@@ -1,13 +1,13 @@
-<% if @user.errors %>
-  <% @user.errors.full_messages.each do |message| %>
-  <p><%= message %></p>
-  <% end %>
-<% end %>
-
-
 <div class="row">
-  <div class="col-sm-3"></div>
-   <div class="col-sm-6 text-center well">
+  <div class="col-sm-2"></div>
+   <div class="col-sm-8 text-center well">
+     <div class="red">
+       <% if @user.errors %>
+         <% @user.errors.full_messages.each do |message| %>
+         <h4><%= message %></h4>
+         <% end %>
+       <% end %>
+     </div>
      <h3>Sign Up for Dodgeball!</h3>
      <%= form_for @user do |f| %>
      <div class="form-group">
@@ -18,17 +18,13 @@
        <%= f.label "Password: " %>
        <%= f.password_field :password %>
      </div>
-
-     <div class="mx-auto" style="width: 610px;">
+     <div class="form-group">
        <%= f.label "Password Confirmation: "%>
        <%= f.password_field :password_confirmation %> <br>
      </div>
-     <div class="mx-auto" style="width: 760px;">
+     <div class="mx-auto" style="width: 600px;">
        <%= f.submit class: "btn btn-primary" %>
      </div>
-
-
-
      <% end %>
    </div>
    </div>
