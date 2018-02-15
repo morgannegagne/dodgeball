@@ -6,6 +6,7 @@
       <th>Manager</th>
       <th>Wins</th>
       <th>Losses</th>
+      <th>Winning Percentage</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,7 @@
         <td> <%= team.user.name %> </td>
         <td> <%= team.wins %> </td>
         <td> <%= team.losses %> </td>
+        <td> <%= sprintf("%.3f", team.winning_percentage) %> </td>
     </tr>
     <% end %>
 
