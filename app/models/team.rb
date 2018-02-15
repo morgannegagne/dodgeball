@@ -25,4 +25,8 @@ class Team < ApplicationRecord
     self.save
   end
 
+  def self.search_teams(search_term)
+    self.all.select{|team| team.name.downcase.include?(search_term.downcase)}
+  end
+
 end

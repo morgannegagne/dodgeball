@@ -1,6 +1,14 @@
-<h1>Dodgeball Players</h1>
-<ul>
+<h1 class="dodgeball red text-center">League Players</h1>
+
 <% @players.each do |player| %>
-  <li><%= link_to player.name, player %></li>
+  <div class="col-sm-4 text-center" style="padding: 1em">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title text-center"><%= link_to "#{player.name} ##{player.number}", player, class:"red" %></h4>
+        <%= image_tag player.image_url, class: "img-thumbnail", style: "height: 250px" %>
+
+        <a href="/players/<%=player.id%>" style="width: 100%" class="btn btn-danger">Player Profile</a>
+      </div>
+    </div>
+  </div>
 <% end %>
-</ul>
