@@ -3,6 +3,15 @@ class TeamsController < ApplicationController
   before_action :set_user
   before_action :set_team, only:[:show, :edit, :update, :destroy]
 
+  def index
+
+    if params[:search]
+      @teams = Team.order(:name).search_teams(params[:search])
+    else
+      @teams = Team.order(:name)
+    end
+
+  end
 
   def show
   end

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+.dodgeball {
+  font-family: 'Shrikhand', cursive;
+}
+
+.red {
+  color: rgb(189,53,50)
+}
+
+.white{
+  color: rgb(255,255,255)
+}
+
+.red-bg{
+  background-color: rgb(189,53,50)
+}

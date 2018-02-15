@@ -9,13 +9,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
-  # def is_authenticated?
-  #   if !current_user
-  #     flash[:message] = "You need to log in, first"
-  #     redirect_to login_path
-  #   end
-  # end
-
   def logged_in?
     !!current_user
   end

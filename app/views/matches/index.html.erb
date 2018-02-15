@@ -2,4 +2,9 @@
 
 <div class="container text-center">
   <h1>Matches</h1>
+  <div>
+    <% @matches.each do |match| %>
+      <p><%= link_to match.summary, match_path(match) %></p>
+    <% end %>
+  </div>
 </div>
