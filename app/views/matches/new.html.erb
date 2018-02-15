@@ -1,20 +1,9 @@
-<style type="text/css">
-   body { background: palegoldenrod !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-</style>
-
-    <div class="container" style="background-image: url('https://previews.123rf.com/images/designsource09/designsource091403/designsource09140300001/26631046-hardwood-maple-basketball-court-floor-viewed-from-above.jpg')">
-
-
 
 <div class="fluid-container text-center">
   <h1>Play a Match!</h1>
   <h3>Choose your opponent: </h3>
 </div>
-<div class="container" style="background-image: url('https://previews.123rf.com/images/designsource09/designsource091403/designsource09140300001/26631046-hardwood-maple-basketball-court-floor-viewed-from-above.jpg')">
 
-
-
-</div>
 <div class="search-from">
 <%= form_tag(new_match_path, :method => "get", id: "search-form") do %>
   <div class="input-group">
@@ -27,9 +16,7 @@
       </span>
   </div>
 <% end %>
-<div class="container" style="background-image: url('https://previews.123rf.com/images/designsource09/designsource091403/designsource09140300001/26631046-hardwood-maple-basketball-court-floor-viewed-from-above.jpg')">
 
-</div>
 <br></br>
 
 
@@ -37,9 +24,9 @@
 
     <thead>
       <tr>
-      <td class="text-center">Team</th>
-      <td class="text-center">Owner</th>
-      <td class="text-center">Challenge</th>
+      <th class="text-center">Team</th>
+      <th class="text-center">Owner</th>
+      <th class="text-center">Challenge</th>
     </tr>
   </thead>
   <tbody>
@@ -52,4 +39,4 @@
     </tr>
 
 <% end %>
-</div>
+</table>
