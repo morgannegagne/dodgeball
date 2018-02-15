@@ -14,7 +14,7 @@ Player.create(name: "Serena Williams", number: 1, height: "5' 9 in", wingspan: 6
 Player.create(name: "Ronda Rousey", number: 2, height: "5' 7 in", wingspan: 66, position: "middle", image_url: "http://www.mma.tv/wp-content/uploads/2017/02/ronda.png")
 Player.create(name: "Hermione Granger", number: 12, height: "5' 4 in", wingspan: 62, position: "middle", image_url: "https://vignette.wikia.nocookie.net/harrypotter/images/4/41/Hermionedhface.jpg/revision/latest/scale-to-width-down/350?cb=20161221044857")
 Player.create(name: "Daenerys Targaryen", number: 5, height: "5' 3 in", wingspan: 60, position: "middle", image_url: "https://images-eu.ssl-images-amazon.com/images/I/7159Onk2x8L._SY450_.jpg")
-Player.create(name: "TJ Lavin", number: 4, height: "6' 0 in" wingspan: 70, position: "middle", image_url: "http://live.drjays.com/wp-content/uploads/2010/10/9B3D66FF-1A74-4CDF-9AFF-EA9F68D4DFBB.jpg")
+Player.create(name: "TJ Lavin", number: 4, height: "6' 0 in", wingspan: 70, position: "middle", image_url: "http://live.drjays.com/wp-content/uploads/2010/10/9B3D66FF-1A74-4CDF-9AFF-EA9F68D4DFBB.jpg")
 # Runners
 Player.create(name: "Pablo Sanchez", number: 2, height: "3'11 in", wingspan: 40, position: "runner", image_url: "https://static.esea.net/global/images/users/667319.1485404707.jpg")
 Player.create(name: "Otto Rocket", number: 11, height: "4'11 in", wingspan: 52, position: "runner", image_url: "https://vignette.wikia.nocookie.net/nickelodeon/images/0/00/Otto_Rocket.png/revision/latest?cb=20160403064600")

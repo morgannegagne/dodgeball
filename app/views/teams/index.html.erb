@@ -13,10 +13,8 @@
   </div>
 <% end %>
 
-<div class="row">
-  <div class="col-sm-3 col-sm-offset-4">
+  <div class="text-center">
     <% @teams.each do |team| %>
     <p><%= link_to team.name, team_path(team) %></p>
     <% end %>
   </div>
-</div>

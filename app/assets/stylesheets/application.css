@@ -28,3 +28,18 @@
 .red-bg{
   background-color: rgb(189,53,50)
 }
+
+.search-form{
+  padding-left: 50rem;
+  padding-right: 40rem;
+}
+
+.movement {
+  margin: auto;
+
+}
+
+.sign-up{
+  padding-right: 100rem;
+  padding-left: 25rem;
+}
