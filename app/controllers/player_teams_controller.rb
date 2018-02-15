@@ -20,7 +20,6 @@ class PlayerTeamsController < ApplicationController
   end
 
   def update
-    byebug
     PlayerTeam.create(team_id: @team.id, player_id: player_params[:id])
     redirect_to @team
   end
