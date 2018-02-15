@@ -11,7 +11,7 @@
       <div class="text-center">
         <h3>Record</h3>
         <h4><%= "#{team.wins} - #{team.losses}" %></h4>
-        <p><%= "Winning Percentage: ??" %></p>
+        <p><%= "Winning Percentage: #{team.winning_percentage}" %></p>
       </div>
     </div>
 
@@ -26,5 +26,4 @@
 
     <% end %>
   </ul>
-
 <% end %>

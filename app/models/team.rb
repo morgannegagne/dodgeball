@@ -29,4 +29,8 @@ class Team < ApplicationRecord
     self.all.select{|team| team.name.downcase.include?(search_term.downcase)}
   end
 
+  def winning_percentage
+    (wins.to_f / matches.count.to_f).round(3)
+  end
+
 end
