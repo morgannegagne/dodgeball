@@ -22,11 +22,12 @@
   </div>
 
   <ul class="nav nav-tabs">
-    <li><%= link_to "Team", team, class:"red" %></li>
-    <li><%= link_to "Matches", team_matches_path(team), class:"red" %></li>
+    <li class="active"><%= link_to "Team", team, class:"red" %></li>
+    <li><%= link_to "Matches", team_matches_path(team), class:"red"%></li>
     <% if team.user.id.to_i == current_user.id.to_i %>
       <li><%= link_to "Standings", league_path(current_user.league_id), class:"red" %></li>
       <li> <%= link_to "Notifications (#{Notification.unread.where(user_id: current_user.id).count})", notifications_path, class:"red" %></li>
     <% end %>
   </ul>
+
 <% end %>

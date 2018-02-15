@@ -12,7 +12,7 @@ class Team < ApplicationRecord
   end
 
   def matches
-    Match.where('home_team_id = ? or away_team_id = ?', id, id)
+    Match.where('home_team_id = ? or away_team_id = ?', id, id).order(created_at: :desc)
   end
 
   def add_win

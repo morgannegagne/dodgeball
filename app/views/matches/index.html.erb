@@ -4,7 +4,7 @@
   <h1>Matches</h1>
   <div>
     <% @matches.each do |match| %>
-      <p><%= link_to match.summary, match_path(match) %></p>
+      <p><%= link_to match.summary, match_path(match), class: "red" %></p>
     <% end %>
   </div>
 </div>
