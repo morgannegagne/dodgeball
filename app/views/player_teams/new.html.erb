@@ -1,13 +1,27 @@
-<%= form_tag(controller: 'player_teams', action: 'create',method: "post") do %>
-  <%= label_tag("Add Corner") %>
-  <%= collection_select(:player, :player1_id, Player.where(position:"corner"), :id, :name)%> <br>
-  <%= label_tag("Add Second") %>
-  <%= collection_select(:player, :player2_id, Player.where(position:"second"), :id, :name)%> <br>
-  <%= label_tag("Add middle") %>
-  <%= collection_select(:player, :player3_id, Player.where(position:"middle"), :id, :name)%> <br>
-  <%= label_tag("Add runner") %>
-  <%= collection_select(:player, :player4_id, Player.where(position:"runner"), :id, :name)%> <br>
-  <%= label_tag("Add shagger") %>
-  <%= collection_select(:player, :player5_id, Player.where(position:"shagger"), :id, :name)%> <br>
-  <%= submit_tag "submit" %>
-<% end %>
+<div class="container text-center dodgeball red"><h2>Choose Your Players Wisely!</h2></div>
+
+<div class="form-horizontal">
+  <%= form_tag(controller: 'player_teams', action: 'create',method: "post") do %>
+    <div class="form-group">
+    <%= label_tag("Add Corner") %>
+    <%= collection_select(:player, :player1_id, Player.where(position:"corner"), :id, :name)%>
+    </div>
+    <div class="form-group">
+    <%= label_tag("Add Second") %>
+    <%= collection_select(:player, :player2_id, Player.where(position:"second"), :id, :name)%>
+    </div>
+    <div class="form-group">
+    <%= label_tag("Add middle") %>
+    <%= collection_select(:player, :player3_id, Player.where(position:"middle"), :id, :name)%>
+    </div>
+    <div class="form-group">
+    <%= label_tag("Add runner") %>
+    <%= collection_select(:player, :player4_id, Player.where(position:"runner"), :id, :name)%>
+    </div>
+    <div class="form-group">
+    <%= label_tag("Add shagger") %>
+    <%= collection_select(:player, :player5_id, Player.where(position:"shagger"), :id, :name)%>
+    </div>
+    <%= submit_tag "Play Dodgeball!" class: "btn btn-danger"%>
+  <% end %>
+</div>

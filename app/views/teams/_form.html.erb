@@ -1,16 +1,27 @@
-<% if @team.errors %>
-  <% @team.errors.full_messages.each do |message| %>
-  <p><%= message %></p>
+<div class="container text-center">
+  <% if @team.errors %>
+    <% @team.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+    <% end %>
   <% end %>
-<% end %>
 
-<%= form_for @team, :url => url_for(:controller => 'teams', :action => 'create') do |f| %>
+  <div class="form-horizontal">
+    <%= form_for @team, :url => url_for(:controller => 'teams', :action => 'create') do |f| %>
 
-<%= f.label "Team Name" %> <br>
-<%= f.text_field :name %>
-<br></br>
-<%= f.label "Pick a League" %> <br>
-<%= f.collection_select :league_id, League.all, :id, :name %>
-<br></br>
-<%= f.submit %>
-<% end %>
+    <div class="form-group">
+      <%= f.label "Team Name: " %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Pick a League: " %>
+      <%= f.collection_select :league_id, League.all, :id, :name %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Submit", class: "btn btn-danger"%>
+    </div>
+
+    <% end %>
+
+  </div>
+</div>

@@ -2,7 +2,11 @@
 
   <div class="row well">
     <div class="col-sm-8">
-      <h1><%= team.name %></h1>
+      <% if team.user.id.to_i == current_user.id.to_i %>
+        <h1><%= team.name %> <a href="/users/<%= current_user.id %>/team/edit"><small><span class="glyphicon glyphicon-pencil"></span></a></small></h1>
+      <% else %>
+        <h1><%= team.name %></h1>
+      <% end %>
       <h4>Manager : <%= user.name %></h4>
       <h4> <%= "Level #{user.ranking.level} - #{user.ranking.name}" %> </h4>
       <p>League : <%= team.league.name %></p>
@@ -11,19 +15,18 @@
       <div class="text-center">
         <h3>Record</h3>
         <h4><%= "#{team.wins} - #{team.losses}" %></h4>
-        <p><%= "Winning Percentage: ??" %></p>
+        <p><%= "Winning Percentage: #{team.winning_percentage}" %></p>
       </div>
     </div>
 
   </div>
 
   <ul class="nav nav-tabs">
-    <li><%= link_to "Team", team, class:"red" %></li>
-    <li><%= link_to "Matches", team_matches_path(team), class:"red" %></li>
+    <li class="active"><%= link_to "Team", team, class:"red" %></li>
+    <li><%= link_to "Matches", team_matches_path(team), class:"red"%></li>
     <% if team.user.id.to_i == current_user.id.to_i %>
       <li><%= link_to "Standings", league_path(current_user.league_id), class:"red" %></li>
       <li> <%= link_to "Notifications (#{Notification.unread.where(user_id: current_user.id).count})", notifications_path, class:"red" %></li>
-
     <% end %>
   </ul>
 

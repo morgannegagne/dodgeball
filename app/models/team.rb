@@ -12,7 +12,7 @@ class Team < ApplicationRecord
   end
 
   def matches
-    Match.where('home_team_id = ? or away_team_id = ?', id, id)
+    Match.where('home_team_id = ? or away_team_id = ?', id, id).order(created_at: :desc)
   end
 
   def add_win
@@ -27,6 +27,10 @@ class Team < ApplicationRecord
 
   def self.search_teams(search_term)
     self.all.select{|team| team.name.downcase.include?(search_term.downcase)}
+  end
+
+  def winning_percentage
+    (wins.to_f / matches.count.to_f).round(3)
   end
 
 end

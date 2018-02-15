@@ -1,7 +1,13 @@
-<h1>Replace Player</h1>
+<h1 class="text-center red dodgeball">Trade Player</h1>
 
-<%= form_tag({controller: 'player_teams', action: 'update'}, method: "patch") do %>
-<%= label_tag("Replace your player") %>
-<%= collection_select(:player, :id, Player.where(position: @player.position), :id, :name)%> <br>
-<%= submit_tag "submit" %>
-<% end %>
+<div class="container text-center">
+  <div class="form-horizontal">
+    <%= form_tag({controller: 'player_teams', action: 'update'}, method: "patch") do %>
+    <div class="form-group">
+    <%= label_tag("Replace your player") %>
+    <%= collection_select(:player, :id, Player.where(position: @player.position), :id, :name)%>
+    </div>
+    <%= submit_tag "Trade!", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

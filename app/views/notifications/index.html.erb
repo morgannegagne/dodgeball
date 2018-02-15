@@ -1,13 +1,15 @@
 <%= render partial: 'teams/team_tabs', locals: {team: current_user.team, user: current_user} %>
 
-<h1>Your Notifications</h1>
+<div class="container text-center">
+  <h2>Your Notifications</h2>
 
-<% if @notifications.empty? %>
-  <p>You don't have any notifications</p>
-<% else %>
-  <% @notifications.each do |notification| %>
-  <h4><%= notification.display_date %></h4>
-  <%= notification.create_message %>
-  <%= button_to "Mark as Read", notification_path(notification), :notification_id => notification.id, :method=>"patch"  %>
+  <% if @notifications.empty? %>
+    <p style="padding-bottom: 100px;">You don't have any notifications</p>
+  <% else %>
+    <% @notifications.each do |notification| %>
+    <h4><%= notification.display_date %></h4>
+    <%= notification.create_message %>
+    <%= button_to "Mark as Read", notification_path(notification), :notification_id => notification.id, :method=>"patch"  %>
+    <% end %>
   <% end %>
-<% end %>
+</div>

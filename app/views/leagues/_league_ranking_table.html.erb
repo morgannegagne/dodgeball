@@ -6,16 +6,20 @@
       <th>Manager</th>
       <th>Wins</th>
       <th>Losses</th>
+      <th>Winning Percentage</th>
     </tr>
   </thead>
   <tbody>
     <% league.teams.order(wins: :desc).each_with_index do |team, index| %>
     <tr>
+
         <td class="text-left"><%= index + 1 %></td>
         <td class="text-left"> <%= link_to team.name, team_path(team) %> </td>
         <td class="text-left"> <%= team.user.name %> </td>
         <td class="text-left"> <%= team.wins %> </td>
         <td class="text-left"> <%= team.losses %> </td>
+        <td class="text-left"> <%= sprintf("%.3f", team.winning_percentage) %> </td>
+
     </tr>
     <% end %>
 
