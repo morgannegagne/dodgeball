@@ -2,7 +2,11 @@
 
   <div class="row well">
     <div class="col-sm-8">
-      <h1><%= team.name %></h1>
+      <% if team.user.id.to_i == current_user.id.to_i %>
+        <h1><%= team.name %> <a href="/users/<%= current_user.id %>/team/edit"><small><span class="glyphicon glyphicon-pencil"></span></a></small></h1>
+      <% else %>
+        <h1><%= team.name %></h1>
+      <% end %>
       <h4>Manager : <%= user.name %></h4>
       <h4> <%= "Level #{user.ranking.level} - #{user.ranking.name}" %> </h4>
       <p>League : <%= team.league.name %></p>
