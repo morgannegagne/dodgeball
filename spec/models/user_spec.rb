@@ -17,4 +17,14 @@ RSpec.describe User, type: :model do
     morganne = User.create!(:name => "morganne", :password => "password", :password_confirmation => "password", ranking: rookie)
     expect(User.search_users("matt")).to include(matt, matthew)
   end
+
+  it 'returns current level of user' do
+    person = Ranking.create(name: 'First', level: 1)
+    expect(person.level).to_not eq(2)
+  end
+
+  it 'has a name' do
+    one = User.new(:name => "josh")
+    expect(one.name).to eq("josh")
+  end
 end

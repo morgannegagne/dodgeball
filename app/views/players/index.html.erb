@@ -7,7 +7,7 @@
       <div class="card">
         <div class="card-block">
           <h4 class="card-title text-center"><%= link_to "#{player.name} ##{player.number}", player, class:"red" %></h4>
-          <%= image_tag player.image_url, class: "img-thumbnail", style: "height: 200px" %>
+          <%= image_tag player.image_url, class: "img-thumbnail", style: "height: 150px" %>
 
           <a href="/players/<%=player.id%>" style="width: 100%" class="btn btn-danger">Player Profile</a>
         </div>

@@ -15,6 +15,11 @@
   <h3>Winner: <%= @match.winning_team.name %></h3>
   <br></br>
   <h3><u>Match Summary</u></h3>
-  <%= "#{@match.home_team.name} advance to #{@match.home_team.wins} - #{@match.home_team.losses}, now ##{@match.home_team.league.find_team_rank(@match.home_team)} in the #{@match.home_team.league.name} league." %> <br>
-  <%= "#{@match.away_team.name} drop back to #{@match.away_team.wins} - #{@match.away_team.losses}, now ##{@match.away_team.league.find_team_rank(@match.away_team)} in the #{@match.away_team.league.name} league." %>
+  <% if @match.home_team == @match.winning_team %>
+    <%= "#{@match.home_team.name} advance to #{@match.home_team.wins} - #{@match.home_team.losses}, now ##{@match.home_team.league.find_team_rank(@match.home_team)} in the #{@match.home_team.league.name} league." %> <br>
+    <%= "#{@match.away_team.name} drop back to #{@match.away_team.wins} - #{@match.away_team.losses}, now ##{@match.away_team.league.find_team_rank(@match.away_team)} in the #{@match.away_team.league.name} league." %>
+  <% else %>
+    <%= "#{@match.away_team.name} advance to #{@match.away_team.wins} - #{@match.away_team.losses}, now ##{@match.away_team.league.find_team_rank(@match.away_team)} in the #{@match.away_team.league.name} league." %> <br>
+    <%= "#{@match.home_team.name} drop back to #{@match.home_team.wins} - #{@match.home_team.losses}, now ##{@match.home_team.league.find_team_rank(@match.home_team)} in the #{@match.home_team.league.name} league." %>
+  <% end %>
 </div>

@@ -1,4 +1,4 @@
-<div class="standalone_row">
+<div class="row" style="padding-bottom: 3em;">
   <div class="col-sm-3"></div>
    <div class="col-sm-6 text-center well">
 
@@ -11,21 +11,23 @@
      </div>
 
      <h3>Sign Up for Dodgeball!</h3>
-     <%= form_for @user do |f| %>
-      <div class="sign-up text-sm-center pt-3">
-       <%= f.label "Username: " %>
-       <%= f.text_field :name %>
-       <%= f.label "Password: " %>
-       <%= f.password_field :password %>
 
-
-       <%= f.label "Password Confirmation: "%>
-       <%= f.password_field :password_confirmation %> <br>
-
-        <%= f.submit class: "btn btn-primary" %>
-      </div>
-
-     <% end %>
+       <%= form_for @user do |f| %>
+         <div class="form-group">
+         <%= f.label "Username: " %> <br>
+         <%= f.text_field :name %>
+         </div>
+         <div class="form-group">
+         <%= f.label "Password: " %> <br>
+         <%= f.password_field :password %>
+         </div>
+         <div class="form-group">
+         <%= f.label "Password Confirmation: "%> <br>
+         <%= f.password_field :password_confirmation %>
+         </div>
+         <%= f.submit class: "btn btn-danger" %>
+       <% end %>
+     </div>
     </div>
    </div>
 </div>

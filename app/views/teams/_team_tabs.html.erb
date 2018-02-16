@@ -7,9 +7,9 @@
       <% else %>
         <h1><%= team.name %></h1>
       <% end %>
-      <h4>Manager : <%= user.name %></h4>
-      <h4> <%= "Level #{user.ranking.level} - #{user.ranking.name}" %> </h4>
-      <p>League : <%= team.league.name %></p>
+      <h4>Manager: <b><%= user.name %></b></h4>
+      <h4> <%= "Level: #{user.ranking.level}  (#{user.ranking.name})" %> </h4>
+      <p>League: <%= team.league.name %></p>
     </div>
     <div class="col-sm-4">
       <div class="text-center">
