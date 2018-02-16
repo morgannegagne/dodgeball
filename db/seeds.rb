@@ -37,7 +37,7 @@ Player.create(name: "Helga Pataki", number: 9, height: "4' 2 in", wingspan: 50, 
 Player.create(name: "Cam Newton", number: 1, height: "6' 5 in", wingspan: 77, position: "corner", image_url: "https://media.golfdigest.com/photos/5a008660c979d54140edbecf/master/w_768,c_limit/GettyImages-870626736.jpg")
 Player.create(name: "Russell Westbrook", number: 0, height: "6' 3 in", wingspan: 84, position: "corner", image_url: "https://www.thewrap.com/wp-content/uploads/2017/06/Russell-Westbrook.jpg")
 Player.create(name: "Gary Busey", number: 67, height: "6' 0 in", wingspan: 70, position: "corner", image_url: "http://static.tvtropes.org/pmwiki/pub/images/gary_busey.jpg")
-
+Player.create(name: "Lucille Bluth", number: 40, height: "5' 3", wingspan: 60, position: "corner", image_url: "https://www.prosci.com/media/typecms/lucille-bluth.jpg")
 # Shaggers
 Player.create(name: "Mr. Krabs", number: 4, height: "2'1 in", wingspan: 24, position: "shagger", image_url: "https://upload.wikimedia.org/wikipedia/en/6/63/MrKrabs.png")
 Player.create(name: "Kanye", number: 0, height: "5' 8 in", wingspan: 60, position: "shagger", image_url: "http://i.dailymail.co.uk/i/pix/2017/08/19/09/435F42FA00000578-0-image-a-3_1503131841717.jpg")
